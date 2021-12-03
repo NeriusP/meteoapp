@@ -1,16 +1,40 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { SkyconsModule } from 'ngx-skycons';
+
 
 import { AppComponent } from './app.component';
+import { CitiesComponent } from './cities/cities.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { MeteodataService } from './shared/meteodata.service';
+
+const appRoutes: Routes = [
+  {path: '', component: CitiesComponent, children: [
+    {path: 'city/:citycode', component: ForecastComponent}
+  ]}, 
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: 'not-found'}
+]
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CitiesComponent,
+    ForecastComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    SkyconsModule,
+    RouterModule.forRoot(appRoutes)
+    
   ],
-  providers: [],
+  providers: [MeteodataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

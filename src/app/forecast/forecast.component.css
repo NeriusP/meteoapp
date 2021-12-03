@@ -1,0 +1,19 @@
+span.temp{
+    font-size: 3em;
+    font-weight: 600;
+    margin-left: 15px;
+}
+span.date{
+    font-size: 2em;
+    font-weight: 400;
+    margin-left: 15px;
+}
+
+i {
+    font-size: 4em;
+}
+
+a:hover {
+    cursor:pointer;
+   }
+
