@@ -28,12 +28,12 @@
             <tbody>
                 <tr>
                     <td>
-                    <i class="" [ngClass]="getClassDay(meteodata[0].dayWeather)"></i>
+                    <i class="" [ngClass]="getMeteoIcon(meteodata[0].dayWeather)"></i>
                         <span class="temp" *ngIf="meteodata[0].dayAvgTemperature">{{meteodata[0].dayAvgTemperature}} °C</span>
                         <span class="temp" *ngIf="!meteodata[0].dayAvgTemperature">---</span>
                     </td>
                     <td>
-                    <i class="" [ngClass]="getClassNight(meteodata[0].nightWeather)"></i>
+                    <i class="" [ngClass]="getMeteoIcon(meteodata[0].nightWeather, false)"></i>
                     <span class="temp" *ngIf="meteodata[0].nightAvgTemperature">{{meteodata[0].nightAvgTemperature}} °C</span>
                     <span class="temp" *ngIf="!meteodata[0].nightAvgTemperature">---</span>
                 </td>
@@ -58,12 +58,12 @@
                         
                     </td>
                     <td>
-                    <i [ngClass]="getClassDay(info.dayWeather)"></i>
+                    <i [ngClass]="getMeteoIcon(info.dayWeather)"></i>
                         <span class="temp" *ngIf="info.dayAvgTemperature">{{info.dayAvgTemperature}} °C</span>
                         <span class="temp" *ngIf="!info.dayAvgTemperature">---</span>
                     </td>
                     <td>
-                    <i [ngClass]="getClassNight(info.nightWeather)"></i>
+                    <i [ngClass]="getMeteoIcon(info.nightWeather, false)"></i>
                     <span class="temp" *ngIf="info.nightAvgTemperature">{{info.nightAvgTemperature}} °C</span>
                     <span class="temp" *ngIf="!info.nightAvgTemperature">---</span>
                 </td>

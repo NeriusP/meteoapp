@@ -55,73 +55,37 @@ export class ForecastComponent implements OnInit {
     );
   }
 // skirta perduoti awesomefonts ikonų klases į templeitą dienos prognozėms
-  getClassDay(meteoCode: string) {
+   getMeteoIcon(meteoCode: string, isDay: boolean = true) {
     let classNames: string;
-    switch(meteoCode) {
-      case 'clear': classNames = "far fa-sun";
-      break;
-      case 'isolated-clouds': classNames = "fas fa-cloud-sun";
-      break;
-      case 'scattered-clouds': classNames = "fas fa-cloud-sun";
-      break;
-      case 'overcast': classNames = "fas fa-cloud";
-      break;
-      case 'light-rain': classNames = "fas fa-cloud-rain";
-      break;
-      case 'moderate-rain': classNames = "fas fa-cloud-rain";
-      break;
-      case 'heavy-rain': classNames = "fas fa-cloud-rain";
-      break;
-      case 'light-snow': classNames = "fas fa-cloud-rain";
-      break;
-      case 'moderate-snow': classNames = "fas fa-cloud-rain";
-      break;
-      case 'heavy-snow': classNames = "far fa-snowflake";
-      break;
-      case 'sleet': classNames = "fas fa-cloud-showers-heavy";
-      break;
-      case 'fog': classNames = "fas fa-smog";
-      break;
-      case 'na': classNames = "fas fa-rainbow";
-      break;
-      // default:  classNames = "fas fa-minus"
-    }
-    return classNames;
-  }
-
-  // skirtas perduoti awesomefonts ikonų klases į templeitą nakties prognozėms
-  //reikia refaktorinti
-  getClassNight(meteoCode: string) {
-    let classNames: string;
-    switch(meteoCode) {
-      case 'clear': classNames = "far fa-moon";
-      break;
-      case 'isolated-clouds': classNames = "fas fa-cloud-moon";
-      break;
-      case 'scattered-clouds': classNames = "fas fa-cloud-moon";
-      break;
-      case 'overcast': classNames = "fas fa-cloud";
-      break;
-      case 'light-rain': classNames = "fas fa-cloud-rain";
-      break;
-      case 'moderate-rain': classNames = "fas fa-cloud-rain";
-      break;
-      case 'heavy-rain': classNames = "fas fa-cloud-rain";
-      break;
-      case 'light-snow': classNames = "fas fa-cloud-rain";
-      break;
-      case 'moderate-snow': classNames = "fas fa-cloud-rain";
-      break;
-      case 'heavy-snow': classNames = "far fa-snowflake";
-      break;
-      case 'sleet': classNames = "fas fa-cloud-showers-heavy";
-      break;
-      case 'fog': classNames = "fas fa-smog";
-      break;
-      case 'na': classNames = "fas fa-rainbow";
-      break;
-      // default:  classNames = "fas fa-minus"
-    }
+      switch(meteoCode) {
+        case 'clear': classNames = isDay ? "far fa-sun" : "far fa-moon";
+        break;
+        case 'isolated-clouds': classNames = isDay ? "fas fa-cloud-sun" : "fas fa-cloud-moon";
+        break;
+        case 'scattered-clouds': classNames = isDay ? "fas fa-cloud-sun" : "fas fa-cloud-moon";
+        break;
+        case 'overcast': classNames = "fas fa-cloud";
+        break;
+        case 'light-rain': classNames = "fas fa-cloud-rain";
+        break;
+        case 'moderate-rain': classNames = "fas fa-cloud-rain";
+        break;
+        case 'heavy-rain': classNames = "fas fa-cloud-rain";
+        break;
+        case 'light-snow': classNames = "fas fa-cloud-rain";
+        break;
+        case 'moderate-snow': classNames = "fas fa-cloud-rain";
+        break;
+        case 'heavy-snow': classNames = "far fa-snowflake";
+        break;
+        case 'sleet': classNames = "fas fa-cloud-showers-heavy";
+        break;
+        case 'fog': classNames = "fas fa-smog";
+        break;
+        case 'na': classNames = "fas fa-rainbow";
+        break;
+        // default:  classNames = "fas fa-minus"
+      }
     return classNames;
   }
 
